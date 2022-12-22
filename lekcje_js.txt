@@ -1,0 +1,254 @@
+Lekcja1
+
+Plik.js na swój SCOPE globalny (obszar zasięgu) czyli to co jest w tym pliku dziala tylko w tym pliku.
+
+silnie typowany jezyk - przy inicjalizacji/tworzeniu zmiennej musimy określić jej typ
+
+let - deklarujemy zmienne ktore moga byc modyfikowane
+const - deklarujemy stałe które się nie zmieniają
+
+Kiedy deklarujemy zmienne stałe to MUSIMY OD RAZY przyporządkować im jąkąś wartość.
+Jeśli deklarujemy zmienną bez wartości (czyli pustą) - dostaje ona wartość undifined
+
+Poprawne nazwy zmiennych:
+- cos1
+- _cos
+- każdy inny wyraz który nie robi nic w kodzie
+- Cos (js odróżnia wielkie litery od malych)
+- cos (js odróżnia wielkie litery od malych)
+
+Objekt
+Pizemy w { } - możemy tam zadeklarować kilka zmiennych ale wszystkie wtedy będzą let'ami
+Nie deklarujemy rodzaju zmiennych w środku
+W obkiecie przy przypisywaniu zamiast =, używamy dwukropka (:)
+
+Każdy obiekt ma swój scope (czyli może mieć swoje zmienne) . W scopie globalnym nie możemy odwoływać się bezpośrednio do zmiennych ze obiektu. W obiekcie natomiast możemy odwoływać się do zmiennych z obiektu oraz ze scope'u globalnego
+
+W obiekcie mamy właśności (property) oraz ich wartości(value)(property:value) , innym określeniem jest (key: value) 
+
+---------------------------------------------------------------------------------------
+Lekcja2
+
+Kolejny obiekt - Tablica array. Tablica w teori jest obiektem, a praktycznie nie do końca
+
+Tablice to ciąg pozycji z wartościami , index pierwszej pozycji to 0. 
+
+=== - sprawdza równość wartości, ORAZ typ
+== - sprawdza równość wartości
+
+Zaprszecznia (nierówności)
+!== - sprawdza nierówność wartości, ORAZ typ
+!= - sprawdza nierówność wartości
+
+! przed jakąś wartością zamienia ją na boolean'ana i neguje
+!5 -> zamienia nam na boolean i neguje czyli wyjdzie fałsz
+!!5 -> zamienia nam na boolean i neguje czyli wyjdzie fałsz, drugi wykrzyknin znów neguje więc wyjdzie prawda
+
+tekstowe tam samo
+!'5' -> zamienia na boolen czyli prawda i neguje czyli wyjdzie fałsz
+!!'5' -> zamienia na boolen czyli prawda i neguje czyli wyjdzie fałsz, 2 wykrzyknik znowu neguje a więc prawda
+
+!undifined -> boolean zamienia nam go na fałsz, a 1 wykrzyknik to neguje a więc prawda
+!!undifined -> boolean zamienia nam go na fałsz, a 1 wykrzyknik to neguje a więc prawda, 2 wykrzynik znowu neguje a więc fałsz
+
+!null -> boolean zamienia go na fałsz, 1 wykrzyknik to neguje a więc prawda
+!null -> boolean zamienia go na fałsz, 1 wykrzyknik to neguje a więc prawda, 2 wykrzynik znowu neguje a więc fałsz
+
+Porównynwania
+> lub <
+znak = zawsze stawiamy za < lub > czyli <= lub >=
+
+Liczba w stringu (jest konwertowana na numer) a więc posiada taką samą wartość jak normalna liczba
+
+Stringi - texty (https://javascript.info/comparison#string-comparison)
+Przy porównywaniu stringów kolejne znaki są ze sobą porównywane po kolei, do momentu dopóki nie są różne
+
+Stringi - texty i liczby w ''
+Liczby w stringach gdy są porównywane z literami, przyjmują wartość z tabeli tak jak litery.
+
+Stringi - text i liczba (numeryczna postać)
+console.log('a' > 5 ) 
+a jest zamieniane na NaN(not a number) -> false ( z porównywania NaN z liczbą wyjdzie fałsz)
+
+Kolejność wartości liter:
+1. A-Z
+2. a-z
+A - najmniejsza wartość ze wszystkich
+z - największa wartość
+
+const zmienna1 = null
+const zmiennaNotNull = zmienna1 ?? '100' 
+console.log(zmiennaNotNull)
+W przypadku nulla zmienna przyjmie wartość 100, jeśli w zmiennej1 będzie jakakolwiek wartość liczbowa to wyświetli nam się ona a nie setka
+
+
+------------------------------------------------------------------------------------------
+Lekcja3 - Działania na zmiennych
+
+stringi łączymy znakiem +
+- dodawanie nie konertuje znaków na liczby tylko je łączy ("4" + 5)
+- każde inne działanie konwertuje liczbe w stringu na numeryczną i wykonuje działanie
+
+Math. - biblioteka z działaniami bardziej zaawansowanymi
+
+Tenary Operator - const x = zmienna9 ? '200' : 'siema'
+
+const zmienna9 = null
+const x = zmienna9 ? '200' : 'siema'
+console.log (x)
+
+wyświetli: siema
+
+Przy null, undifined, '', 0, false -> wyświetlu nam 2 opcje (w tym wypadku siema)
+Przy wartości liczbowej( poza 0) , texcie, true -> wyświetli nam 1 opcje
+
+% - modulo
+console.log(12 % 5, 12 % 2 ) // modulo(reszta z dzielenia) wyniki: 2,0
+------------------------------------------------------------------------------------------
+Lekcja4 - funkcje
+
+definiowanie funkcji 
+function + nazwa z () (w nawiasie definiujemy argumenty) + { (ciało funkcji) }
+
+Mamy funkcje które mają wynik - wtedy potrzebujemy dopisać return z wartością 
+
+Oraz posiadamy takie które tylko wykonują czynności ale nie zwracają wyniku np.console.log
+( funkcje które nie mają returna nazywamy VoidFunction)
+
+PureFunction - funkcja która opiera się tylko i wyłącznie na podanych przez nas argumentach, nie korzysta np ze scope'u globalnego/rodzica oraz nie modyfikuje go w żaden sposób.
+Jeżeli w PureFunction wywołamy inną PureFunction to ta funkcja pozostaje czysta.
+
+Jeżeli funkcja ma sideEffect np. wysyła coś do servera, pobiera coś z servera, zapisuje coś w konsoli to nie możemy nazwać ją funkcją pure.
+
+po wpisaniu ...arg w argumencie funkcji, funkcja stworzy tabele do której zostaną wpisane wartości podane przez nas. Dzięki temu nie musimy podawać przy definiowaniu dokładnej liczby argumentów jakie mają zostać wpisane, tylko możemy wpisać dwolną liczbe w czasie wywoływania funkcji
+
+... -spread operator -  trzy kropki przed nazwą tabeli lub obiektu, dekonstruuje ją, dzieki temu możemy wyjąć wartości z tabeli
+
+------------------------------------------------------------------------------------------
+Lekcja5 - Referencje
+
+Proste zmienne typu: numerycznego, string, boolean porównujemy przez wartości:
+
+const a = 5
+const b = 5
+
+console.log(a === b) // true
+
+Struktury danych: OBIEKTY oraz TABLICE są porównywane przez referencje tj. przez ich miejsce w pamięci
+
+OBIEKTY:
+
+const ob1 ={
+    a: 1,
+    b: 2
+}
+const ob2 ={
+    a: 1,
+    b: 2
+}
+console.log(ob1 === ob2) // false
+console.log ('ob1.a vs ob2.a: ', ob1.a === ob2.a) //true (tru bo zmienne proste)
+
+const p1 ={
+    a: 1,
+    b: 2
+} 
+const p2 = p1 	// tworzymy referencje do p1 o nazwie p2
+
+p2.a = 10
+
+console.log(p1 === p2) // true (referencja do p1)
+
+console.log('p1', p1, 'p2', p2) // (p1 { a: 10, b: 2 } p2 { a: 10, b: 2 })
+
+TABELE TAK SAMO:
+
+const table1 = [1,2,3]
+
+const table2 = [1,2,3]
+
+console.log(table1 === table2) // false
+
+
+const table3 = table2  // tworzymy referencje do table2 o nazwie table3
+
+table3[1] = 3
+
+console.log(table3 === table2) // true
+console.log('table2: ', table2, 'table3: ', table3) // (table2:  [ 1, 3, 3 ] table3:  [ 1, 3, 3 ])
+
+----------------------------------------------------------------------------------------------------
+Lekcja6 - Referencje, program  -> program_referencje.js
+
+Jeśli zadeklarujemy wartość x w scopie globalnym, a później w scopie indywidualnym, i dodamy consolelog w scopie indywidualnym to wtedy wyświetli nam się wartośc ze scope'u a nie z globalnego.
+
+po returnie kod już się nie wykonuje.
+
+Dobra funkcja:
+function show(a){
+    if (a){
+        console.log("wunik 1: ", 1 )
+        return
+    }
+    console.log('wynik 0: ', 0)
+}
+show(x)
+
+też dobra:
+function show(a){
+    if (a){
+        console.log("wunik 1: ", 1 )
+    } else{
+        console.log('wynik 0: ', 0)
+    }
+}
+show(x)
+
+zła i zwraca oba:
+function show(a){
+    if (a){
+        console.log("wunik 1: ", 1 )
+    }
+    console.log('wynik 0: ', 0)
+}
+show(x)
+
+Samego else - uzywamy wtedy kiedy coś jest nieoczekiwane
+
+if (typeof (a) !== 'number')
+
+typeof (a) - funkcja która przyjmuje wartość i zwaraca nazwe tego typu w postaci stringa 
+null - zwraca obiekt
+
+
+TEN SWITCH NIE DZIAŁA
+w tej funkcji to co podamy w age jest porównywane do podanych nawiasów czyli np: 17 === 17>=18, z tego wchodzi 17 === false czyli default - złe dane
+
+function switchPeloletni(age){
+    switch(age){
+        case (age >= 18):
+            console.log('pełnoletni')
+            break
+	case (age < 18):
+            console.log('niepełnoletni')
+            break
+        default:
+            console.log('zle dane')
+    }
+}
+
+TAK SAMO DZIAŁA
+
+if (false) {
+    const y = 10
+}
+oznacza to samo
+if (false)
+    const y = 10
+
+
+-----------------------------------------------------------------------------------------------------
+Lekcja 7 - Pętle
+
+table.length
+nazwatablicy.length -> zwraca długość tablicy
