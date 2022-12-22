@@ -1,3 +1,4 @@
+
 //lekcja2
 const array = [99, "silny",3,6,10,true]
 
@@ -71,7 +72,5 @@ const zmienna9 = null
 
 const zmiennaNotNull = zmienna9 ?? '100'
 console.log(zmiennaNotNull)
-
-
 
 

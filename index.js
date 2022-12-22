@@ -46,8 +46,3 @@ console.log(obj)
 
 obj["zmienna1"] // wybieranie zmiennej1
 
-
-
-
-
-

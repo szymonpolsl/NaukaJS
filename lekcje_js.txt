@@ -1,3 +1,4 @@
+
 Lekcja1
 
 Plik.js na swój SCOPE globalny (obszar zasięgu) czyli to co jest w tym pliku dziala tylko w tym pliku.
@@ -252,3 +253,14 @@ Lekcja 7 - Pętle
 
 table.length
 nazwatablicy.length -> zwraca długość tablicy
+
+
+
+dir - wyświetlenie plików w folderze
+pliki .exe - wystarczy je wpisać po prostu bez niczego
+
+
+
+git stash - komenda wszystkie ostatnie zmiany od ostatniego commita dodaje do schowka
+git stash pop - dodawanie zmian ze schowka do brancha
+git add . - wszystkie zmiany od ostatniego commitu zostaną dodane

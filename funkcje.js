@@ -98,5 +98,3 @@ function pureInPure (...arg1){                  // pure function mimo Math.max (
     return Math.max(...arg1)
 }
 console.log(pureInPure(0,245,123,463,314,43,2))
-
-
