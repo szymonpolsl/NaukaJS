@@ -52,5 +52,3 @@ table3[1] = 3
 console.log(table3 === table2)
 console.log('table2: ', table2, 'table3: ', table3)
 
-
-
