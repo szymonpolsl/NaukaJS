@@ -1,0 +1,42 @@
+let valNumb = 77
+let valNumbNeg = -17.5
+let valNumbZero = 0
+let valUndef
+let valUndefStr = "undefined"
+let valStr = "jeż"
+let valStrNumb = "77"
+let valStrBool = "false"
+let valBool = true
+let valNull = null
+let valInfinity = Infinity
+
+console.log("1. 77 == '77' ", valNumb == valStrNumb) 	//true	
+console.log("2. 77 === '77' ", valNumb === valStrNumb)	//false
+console.log("3. -17.5 != '77' ", valNumbNeg != valStrNumb) //true
+console.log("4. -17.5 !== ''77 ", valNumbNeg !== valStrNumb) //true
+console.log("5. 77 > -17.5 ", valNumb > valNumbNeg)  		//true
+console.log("6. 0 == undefined ", valNumbZero == valUndef)	//false
+console.log("7. 0 == null ", valNumbZero == valNull)	//false - null się konwertuje na NaN
+console.log("dodatkowe 0 <= null ", 0 <= null)		//true - bo null zmienia się na 0
+console.log("8. Infinity > 0 ", valInfinity > valNumbZero)	//true
+
+console.log("9. 77 <= '77' ", valNumb <= valStrNumb) 		//true
+console.log("10. 'jeż' >= '77' ", valStr >= valStrNumb)		//true
+console.log("11. 'jeż' === 'undefined' ", valStr === valUndefStr)  //false
+console.log("12. '77' > undefined ", valStrNumb > valUndef)	   //false
+console.log("13. 'jeż' < undefined ", valStr < valUndef)	//false
+console.log("14. 'false' == null ", valStrBool == valNull)	//false
+console.log("15. null == 'false' ", valNull == valStrBool)      //false
+console.log("16. undefined == 'undefined' ", valUndef == valUndefStr)  //false
+console.log("17. undefined === 'undefined' ", valUndef === valUndefStr) //false
+
+console.log("18. true == 'false' ", valBool == valStrBool) 	//false
+console.log("19. true !== 'false' ", valBool !== valStrBool)	//true
+console.log("20. true != 'false' ", valBool != valStrBool)	//true
+console.log("21. null !== true ", valNull !== valBool)		//true
+console.log("22. null != true ", valNull != valBool)		//true
+console.log("23. undefined == null ", valUndef == valNull)	//true
+console.log("24. undefined === null ", valUndef === valNull)	//false
+
+//console.log(5 == 4 == 4 * true)
+

@@ -264,3 +264,25 @@ pliki .exe - wystarczy je wpisać po prostu bez niczego
 git stash - komenda wszystkie ostatnie zmiany od ostatniego commita dodaje do schowka
 git stash pop - dodawanie zmian ze schowka do brancha
 git add . - wszystkie zmiany od ostatniego commitu zostaną dodane
+
+
+
+GIT
+git init - inicjalizacja gita (odpalanie go w folderze)
+git status - sprawdzanie statusu gita  jest w folderze 
+git add test.txt - chcemy obserwować plik test.txt (wtedy po wpisaniu git status zmieni się miejsce zajmowania przez plik test.txt)
+git add . - oberwowanie wszystkich plików co zmienialiśmy przez GITa
+git commit -m "First file - (flaga -m pozwala nazwać commit) wprowadzamy zmiane
+git log - pokzauje commity
+git branch - pokazuje na jakim branchu jesteśmy i jakie posiadamy
+git chceckout -b nazwa - tworzenie nowego branchu
+git chceckout nazwa_branchu - przechodzenie na inny branch
+git merge nazwa_branchu - łączenie nazwa_branchu z branchem na jakim jesteśmy( wtedy pliki i zmiany z nazwa_branchu bedą wprowadzone na aktualnym branchu)
+
+
+Łączenie z repozytorium z neta
+git remote add origin LINK - dodawanie repozytorium zdalnego z gita
+git push -u origin nazwa_branchu - jak wysyłamy branch od siebie na repozytorium zdalne PIERWSZY RAZ
+git push - mozna robić po wpisaniu tegu wyżej (nie trzeba nic dodawać)
+git pull - pobera nam wersje z neta folderu
+

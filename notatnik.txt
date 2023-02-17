@@ -1,0 +1,17 @@
+const zmienna1 = 1;
+const zmienna2 = "text";
+const zmienna3 = true;
+---------------------------------
+const obj = {
+	zmienna1:1,
+	zmienna2:"jeden",
+}
+
+const table = [1,2,4,5];
+---------------------------------
+console.log(obj.zmienna2)
+console.log(table[2])
+---------------------------------
+
+
+
