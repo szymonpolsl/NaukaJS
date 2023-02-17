@@ -1,0 +1,113 @@
+const suspects = [
+	{
+		name: 'Grażka',
+		age: '62',
+		relative: [
+			'Gorzata',
+			'Kojot'
+		],
+		job: true,
+		affilation: null
+	},
+	{
+		name: 'Gorzata',
+		age: 38,
+		relative: [
+			'Kojot',
+			'Grażka'
+		],
+		job: 'undefined',
+		affilation: 'null' 
+	},
+	{
+		name: 'Kojot',
+		age: 22,
+		relative: 'false',
+		job: undefined,
+		affilation: '0'
+	}
+]
+
+const secret = {
+	rooms: '22',
+	people: suspects,
+	mainSuspect: {
+		name: 'Gorzata',
+		age: 38,
+		relative: [
+			'Kojot',
+			'Grażka'
+		],
+		job: 'undefined',
+		affilation: 'null' 
+	},
+	secondarySuspect: suspects[2]
+}
+
+console.log("1.name z 1elementu wlasnosci people do rooms z secret ", secret.people[0].name === secret.rooms)
+console.log("2.age z 3elementu wlasnosci people do rooms z secret ", secret.people[2].age == secret.rooms)
+console.log("3.age z wartości wlasnosci main suspect z wartości zmiennej 'secret' do age  z secret  ", secret.mainSuspect.age === suspects[2].age)
+console.log("4. mainSupespect z wlasnosci secret do 2elementu zmiennej suspect", secret.mainSupespect === suspects[1])
+console.log("5. 2element wlasnosci people z secret do wlasnosci secondarySuspect z secret ", secret.people[1] === secret.secondarySuspect)
+console.log("6. job z 1elementu wartości suspects do wartości wlasnosci relative z 3elementu wlasnosci people z wartosci zmienneej secret ", 
+			suspects[0].job !== secret.people[2].relative)
+console.log("7 1element wartosci relative z pierwszego elementu wartości suspets do  ", suspects[1].relative[1] >= secret.mainSupespect[1])
+
+console.log("8.name z secret ", secret.people[0].name === secret.rooms)
+console.log("9.name z secret ", secret.people[0].name === secret.rooms)
+console.log("10.name z secret ", secret.people[0].name === secret.rooms)
+console.log("11.name z secret ", secret.people[0].name === secret.rooms)
+
+
+
+
+// kod powinnien nie zwracać błędów, po odpaleniu w terminalu 
+
+
+// schemat rozwiązywania zadań (wszystko powinno być rozpisane jak w przykładzie):
+// 1porównaj przez '===' wartość własności 'name' z pierszego elementu z wartości własności 'people' ze zmiennej 'secret',
+// do wartości właśności 'rooms' z obiektu 'secret' 
+// secret.people[0].name === secret.rooms ---> 'Grażka' === '22' ---> false
+
+
+// 2porównaj przez '==' wartość własności 'age' z trzeciego elementu wartości własności 'people' ze zmiennej 'secret',
+// do wartości własności 'rooms' z obiektu 'secret'
+
+
+// 3porównaj przez '===' wartość własności 'age' z wartości własności 'mainSuspect' z wartości zmiennej 'secret',
+// do wartości własności 'age' z trzeciego elementu wartośći zmiennej 'suspects'
+
+
+// 4porównaj przez '===' wartość własności 'mainSuspect' z wartości zmiennej 'secret',
+// do wartośći drugiego elementu wartości ze zmiennej 'suspects'
+
+
+// 5porównaj przez '===' wartość drugiego elementu wartości własności 'people' z wartości zmiennej 'secret',
+// do wartości własności 'secondarySuspect' z wartości zmiennej 'secret'
+
+
+// 6porónaj przez !== wartość własności 'job' z pierwszego elementu wartości zmiennej 'suspects',
+// do wartośći własności 'relative' z trzeciego elementu wartości własności 'people' z wartości zmiennej 'secret'
+
+
+// 7porównaj przez >= wartość pierszego elementu wartości własności 'relative' z pierszego elementu wartości zmiennej 'suspects',
+// do wartości drugiego elementu wartości własności relative z wartości własności 'mainSuspect' z wartości zmiennej 'secret'
+
+
+// 8porównaj przez <= wartość własności 'affilation' z wartości własności 'mainSuspect' z wartości zmiennej 'secret',
+// do wartości własności 'affilation' z wartości trzeciego elementu wartości zmiennej 'suspects'
+
+
+// 9porównaj przez == wartość własności 'job' z wartości własności 'secondarySuspect' z wartości zmiennej 'secret',
+// do wartośći własności 'job' z wartości własności 'mainSuspect' z wartości zmiennej 'secret'
+
+
+// 10porównaj przez >= wartość pierwszego elementu z wartości własnośći 'relative' z wartości własności 'mainSuspect' z wartości zmiennej 'secret',
+// do wartości własności 'affilation' z wartości własności 'secondarySuspect' 
+
+
+// 11porównaj przez '==' wartość własności 'job' z wartości własności 'mainSuspect' z wartości zmiennej 'secret',
+// do wartości własności 'job' z wartości pierwszego elementu wartości zmiennej 'suspects'
+
+
+
