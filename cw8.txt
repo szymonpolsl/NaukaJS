@@ -47,19 +47,15 @@ const secret = {
 console.log("1.name z 1elementu wlasnosci people do rooms z secret ", secret.people[0].name === secret.rooms)
 console.log("2.age z 3elementu wlasnosci people do rooms z secret ", secret.people[2].age == secret.rooms)
 console.log("3.age z wartości wlasnosci main suspect z wartości zmiennej 'secret' do age  z secret  ", secret.mainSuspect.age === suspects[2].age)
-console.log("4. mainSupespect z wlasnosci secret do 2elementu zmiennej suspect", secret.mainSupespect === suspects[1])
+console.log("4. mainSupespect z wlasnosci secret do 2elementu zmiennej suspect", secret.mainSuspect === suspects[1])
 console.log("5. 2element wlasnosci people z secret do wlasnosci secondarySuspect z secret ", secret.people[1] === secret.secondarySuspect)
 console.log("6. job z 1elementu wartości suspects do wartości wlasnosci relative z 3elementu wlasnosci people z wartosci zmienneej secret ", 
 			suspects[0].job !== secret.people[2].relative)
-console.log("7 1element wartosci relative z pierwszego elementu wartości suspets do  ", suspects[1].relative[1] >= secret.mainSupespect[1])
-
-console.log("8.name z secret ", secret.people[0].name === secret.rooms)
-console.log("9.name z secret ", secret.people[0].name === secret.rooms)
-console.log("10.name z secret ", secret.people[0].name === secret.rooms)
-console.log("11.name z secret ", secret.people[0].name === secret.rooms)
-
-
-
+console.log("7 1element wartosci relative z pierwszego elementu wartości suspets do  ", suspects[0].relative[0] >= secret.mainSuspect.relative[1])
+console.log("8. coś tam taam", secret.mainSuspect.affilation <= suspects[2].affilation)
+console.log("9. secret z secret ", secret.secondarySuspect.job == secret.mainSuspect.job)
+console.log("10.secret z secoundary suspect ", secret.mainSuspect.relative[0] >= secret.secondarySuspect.affilation)
+console.log("11.job z main suspect do job z suspect ", secret.mainSuspect.job == suspects[0].job)
 
 // kod powinnien nie zwracać błędów, po odpaleniu w terminalu 
 

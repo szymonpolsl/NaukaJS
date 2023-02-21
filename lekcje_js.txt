@@ -284,5 +284,11 @@ git merge nazwa_branchu - łączenie nazwa_branchu z branchem na jakim jesteśmy
 git remote add origin LINK - dodawanie repozytorium zdalnego z gita
 git push -u origin nazwa_branchu - jak wysyłamy branch od siebie na repozytorium zdalne PIERWSZY RAZ
 git push - mozna robić po wpisaniu tegu wyżej (nie trzeba nic dodawać)
-git pull - pobera nam wersje z neta folderu
+git pull - pobera nam wersje z neta fogit 
 
+
+Istnieje nadrzeędny obiekt - dokument i w nim zawarte są funkcje 
+
+innerHTML - miejsce między każdymi tagami <button> TUTAJ </button>
+
+npm init -y => inicjalizacja reacta w folderze
