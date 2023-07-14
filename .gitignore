@@ -1,2 +1,12 @@
 .history
-
+/webpack/node_modules
+/01-starting-projectHOOK/node_modules
+/01-starting-setup/node_modules
+/01a-starting-setupSamodzielnyProjek/node_modules
+/aplikacja/cm-api-v2/node_modules
+/aplikacja/cm-frontend-v2/node_modules
+/backend/EXPRESS-PROJECT/node_modules
+/backend/HTTPS-SERVER/node_modules
+/nestJSwow/node_modules
+/REACT-COMPLETEGUIDE/node_modules
+/aplikacja

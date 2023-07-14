@@ -125,6 +125,7 @@ po wpisaniu ...arg w argumencie funkcji, funkcja stworzy tabele do której zosta
 
 ... -spread operator -  trzy kropki przed nazwą tabeli lub obiektu, dekonstruuje ją, dzieki temu możemy wyjąć wartości z tabeli
 
+funkcja rekurencyjna - to wywołanie same siebie rec = () => rec()
 ------------------------------------------------------------------------------------------
 Lekcja5 - Referencje
 
@@ -287,8 +288,340 @@ git push - mozna robić po wpisaniu tegu wyżej (nie trzeba nic dodawać)
 git pull - pobera nam wersje z neta fogit 
 
 
+--------- Początek React'a-------------------------------------------
 Istnieje nadrzeędny obiekt - dokument i w nim zawarte są funkcje 
 
 innerHTML - miejsce między każdymi tagami <button> TUTAJ </button>
 
 npm init -y => inicjalizacja reacta w folderze
+
+./node_modules - żeby nie wrzucać na GITA !
+
+npm install -D webpack - istalacja paczku webpack
+npm install -D webpack-cli - instalacja webpack cli - 
+
+
+common js - stary 
+ecma - nowy
+
+w web packu tylko common js
+
+npx webpack - tworzymy folder z wynikiem( czyli skompresowany plik który podłączamy do strony)
+web pack tworzy wynik który podłączamy bezpośrednio do pliku HTML (wtedy nie używamy już pliku index.js)
+
+paczka lodash
+import lodash from "lodash" - "lodash" - bo mamy to w node_modules
+
+
+
+
+
+
+
+
+----------------------------------PRAKTYKI
+JS refresh i React
+w znaczniku możemy dodać defer jak ma być skrypt załadowany po załadowaniu strony
+type="modules" - traktuje plik .js jako moduł dzieki czemu możemy np inportować z innego pliku .js
+
+17
+możliwe przy type = "modules"
+api key - wysyła zapytanie do HTTPS
+export let apikey = "klucz"
+inport {apikey as beka} from "./data/titanic.csv"; // wtedy gdy odwołamy się do beka wyświetli nam się apikey
+w Reacie nie pisemy .js
+inny sposoób exportowania:
+export default "klucz"
+import bez klamr inport apikey from "./data/titanic.csv";
+import * as util from "./data/" - importowanie kilku api key na raz
+
+20
+
+
+21 funkcja anonimowa
+jak normalna fukcja tylko bez słowa function. () => { }
+
+22
+,23,
+24
+table.push("nazwa zmiennej") - dodawanie zmiennej do tabilcy
+
+const index = table.findIndex((item) => {
+return item === 'Sports';
+});  Szukamy w tablicy parametru 'Sprots'
+
+table.findIndex((item) =>  item === 'Sports');
+
+mapy
+const editedtable = table.map((item) => item + "!");
+console.log(editedtable)
+
+25
+const [firstName,lastName] = ["Max","Verstappen"] TAK SAMO DLA OBIEKTÓW TYLKO Z {}
+console.log(firstName)
+
+27
+... - spread operator wyciąga wartości i dzięki temu możemy stworzyć nową tabelęmoż
+można w tabeli a także w obiektach
+
+
+---------Programowanie asynchroniczne  majk mikrofon 100 i 10 db
+JS jezykiem synchronicznym, jedno dzieje się po drugim
+synchroniczne jeśli np wysyłamy posta to nie możemy nic więcej na stronie robić
+
+asynchronicznie coś dzieje się w tle np klikamy a zdjęcia się nadal ładują na onedriv'ie
+
+silnik V8 - chrome
+
+node powstał na silniku chroma - więc jak kompilujemy .js to takie same wyniki
+
+callstack - dodawanie do siebie elementów 
+
+jak mamy callstack to 
+
+
+const a{
+console.log(A)
+}
+const b{
+a()
+console.log(B)
+}
+const c {
+ b()
+console.log(C)
+}
+
+c() - wywołanie C, dostaniemy zwrot A B C 
+
+  A
+  B
+  C
+GLOBAL
+
+callstack ma skończony rozmiar
+
+
+kolejka dodajemy rzeczy które mają się wydarzyć, i po kolei bedą się wykonywać
+
+silnik ma Stack (callstack) i Heap( pamięć, przechowuje zmienne)
+
+
+
+Event Loop - sprawdza czy call stack jest pusty i czy kolejka nie jest pusta
+jeśli nie jest pusta to dodaje rzeczy do call stacka
+
+console.log("Start")
+
+set.timeout () => (console.log("timout", 5000)) 
+
+console.log("End")
+
+Start
+End
+timeout
+
+taski z kolejki tasków wchodzą do call stacka jeśli on jest pusty
+
+nie ważne czy setTimout bedzie miał dealej 100, czy 0 to i tak trafia do kolejki
+
+
+
+w czystym środowisku noda (czyli w kolejce) nie ma znaczenia kolejność liczy się czas
+do kolejki trafiają po kolei, bez znaczenia czy setTimout czy setImmediate
+
+
+Obietnice - klasa promise() 
+
+const xxx = new Promise((a,b) => {
+})
+
+Request URL - zapytanie
+Requesty to taka kolejna kolejka 
+
+Promiski trafiają do lepszej kolejni niż zykłe timeouty
+Promiski - microtaski kolejka
+Fukcje, Eventy, setTimeout,setImmidietl,setInterval, metody do wykonywania requestów, i metody do operacji na plikach - do zwykłej kolejki
+
+
+useState() - określamy stan, powiny być wywołana w funkcji wewnerznej
+zawsze zwraca tablice z dwoma elementami, 1 wartość bieżąca a 2 to funkcja aktualizująca
+
+Funkcja w której napiszemy useState() zostanie wykonana jeszcze raz
+Stan jest oddzielony instancją komponentu
+
+hook'i
+newState - zmienia stan
+newEffect - wprowadza jakiś efekt po [], jak nie ma nic w [] to tylko raz przy załadowaniu strony, a jak jest to przy każdej zmianie tego co jest w []
+2 argumenty - 1 argument call back - zawsze wykonany przy 1 ładowaniu komponentu, jeśli ma zależności jeśli zostaną zmienione to call back znowu się wykona, a 2 argument to tablica z zależnościami
+
+
+----------------------TypeScript - statyczne typowanie
+npm install typescript
+
+javascript - softtype - miękkotypowany nie trzeba pisać jakiego rodzaju powien być
+
+w konsoli:
+npx tsc - zamiana pliku ts na js w visual studio
+
+
+
+-----class
+w klasach nie używamy funkcji strzałkowych
+w classach jak uzyjemy static - bedzie działać tylko na nazwie tej klasy na innych nie
+jak nie użyjemy static i stworzymy funkcję - to możemy się odwoływać to każdego obiektu stworzonego na podstawie tej klasy
+-----
+-React.FormEvent - wykonany zostanie podczas nasłuchiwania przesłania formularza
+-React.MouseEvent - wykonany zostanie podczas nasłuchiwania kliknięcia
+
+
+
+ref i UseRef 
+ref-referencja
+
+const enteredText = todoTextInputRef.current?.value
+
+? - oznacza dodanie zapytania że próbuje uzyskać dostęp do, jak to damy to nie wywali aplikacji, jak nie damy a nie bedzie danych to wywali błąd
+! - oznacza żę nigdy nie bedzie wartości zerowej
+
+ 
+event.preventDefault() - 
+
+
+----------Backend - EXPRESS
+
+Node.js - podstawowy
+koa - frameword xd
+Express -framework
+
+Postman desktop agent pobrać na laptopa
+
+Instalacja EXPRESSa
+npm init -y
+npm install express
+npm install nodemon --save-dev  --> dzięki temu nie musimy włączać i wyłączać servera
+tylko automatycznie się nam bedzie resetował po zmianie 
+dodajemy do "scripts" nasz skrypt o naszej nazwie (np.watch)
+"watch": "nodemon server.js",
+potem odpalamy server komendą npm run watch
+
+
+Middleware function
+API - porozumiewianie się między back'endem i front'endem
+
+Request -> API - wtedy zostaje HITnięte przez middleware
+
+Middleware function - zanim coś zostanie pobrane z bazy danych, to najpierw
+musi zostać przeprowadzona autoryzacja odbiorcy
+Jeśli jest nieautoryzowany to nie pobierze nic ni nie bedzie mieć dostępu
+a jeśli zostanie przyznany dostęp to będzie miał dostęp do bazy
+Middleware function to co sprawdza, coś porówuje, (jakby nie było to byłby error)
+
+przychodzi do mnie request 
+w returnie zwracam użytkowników
+albo że nie ma osoba dostępu do tego
+
+
+
+Model View Controller (MVC)- pattern jak powinniśmy pisać różne
+części kodu 
+
+Pozwala podzielić kod na części (użytkownik -> kotroler -> model -> obraz zwracany użytkownikowi )
+
+
+Model View Controller (MVC)- organizowanie aplikacji że gdy uzytkownik coś zrobi to dostanie jakąś odpowiedź
+
+
+
+Router - break down application and make it more modular
+
+create route - express.Router(); - dzięki temu nie musimy podawać dokładnych ścieżek w metodach
+bo ta funkcja robi to za nas
+
+
+Restful apis - rest pattern - to styl lub pattern w jaki sposób budujemy API
+
+CRUD - create (POST), read (GET), update(PUT), delete (DELETE)
+
+wysyłanie plików path join
+
+
+Sequel - SQL język
+
+
+TYPE		  MongoDB	Postgres
+ORGANIZED INTO	  Document	Relations
+QUERY LANGUAGE	  NoSQL		SQL	
+SCALING    Primarily Horizontal   Primarily Vertical
+Schema		  Flexible	Rigid
+(struktura
+bazy danych)
+
+
+git clone https://github.com/odziem/nasa-project.git - do kopiowania plików z GITa
+
+
+---------NEST.js
+
+commonjs - składnia z const i module.export
+
+ES modules - składnia z import i export const
+
+
+express - server implementation - wcześniej przerabiany
+
+
+Controller()
+Module()
+
+
+npm install -g  - instalacja globalnie nesta
+nest new project_masseges - tworzenie nowego projektu
+
+npm run start:dev - odpalanie servera NESTowego z konsoli
+
+nest generate module messages - tworzenie modułu (tworzenie nowego folderu z plikiem TS)
+
+nest generate controller messages/messages --flat ==
+'nest generate' - generujemy coś
+'controller' - tworzenie klasy która będzie kontrolerem
+'messages/messages' - chcemy żeby nest stworzył ten kontroller w folderze messages / nazwa klasy kontrolera który tworzymy
+'--flat' - bez tego zmieni nam się struktura folderu messages
+
+class-transformer - przekształca obiekty w tabli w klase
+class-validator - validators properties using decorators
+
+Services - klasa - kiedy porzebujemy jakiś kalkulacji obliczeń
+Repositories - klasa - kiedy potrzebujemy komunikacji z bazą danych np zapisać informację
+
+
+dependency injection - jeśli mamy 2 servicy w kodzie i jeden potrzebuje korzystać z instancji drugiego. Dodajemy wtedy @Injectable() itp
+@Injectable() - registration of the Di containter 
+Providers - things that can be used as dependecies for other classes / zależności dla innych klas
+
+do aplikacji massages
+massages.controller - 1 kontrolem z 3 możliwościami wykonania
+
+
+decoratots - to co importujemy na górze pliku
+
+Global pipes - przetwarza moduł który do niego wchodzi
+
+
+
+jak Hooki działają to zapisujemy podane dane w bazie danych a jak nie działają to w stringu
+save() i remove() - entety instance - hooki będą wykonane 
+insert() update() i delete() - hooks nie bedą wykonane
+
+
+
+pisać yarn zamiast npm
+
+
+await
+
+podkreślanie składni:
+settings -> open user settings json wklejamy "esbenp.prettier-vscode"
+
+
+

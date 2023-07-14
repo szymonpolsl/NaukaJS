@@ -1,0 +1,15 @@
+### List all massages
+GET http://localhost:3000/messages
+
+
+### Create a new massage
+POST http://localhost:3000/messages
+content-type: application/json
+
+{
+  "content":"message after adding DI"
+}
+
+
+### Get a particular massage
+GET http://localhost:3000/messages/274
